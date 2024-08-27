@@ -11,9 +11,10 @@ def get_user_input(info_text):
     root.title("Input to eco.ert")
 
     #Setup of input variables
-    housePrice = tk.StringVar()
+    house_price = tk.StringVar()
     equity = tk.StringVar()
     salary = tk.StringVar()
+    monthly_spending = tk.StringVar()
 
     def ok_clicked():
         root.destroy()
@@ -30,7 +31,7 @@ def get_user_input(info_text):
     house_label = ttk.Label(dialoguebox, text = "What is the price of the house?")
     house_label.pack(fill="x",expand=True)
 
-    house_entry = ttk.Entry(dialoguebox, textvariable=housePrice)
+    house_entry = ttk.Entry(dialoguebox, textvariable=house_price)
     house_entry.pack(fill="x", expand=True)
     house_entry.focus()
 
@@ -49,6 +50,14 @@ def get_user_input(info_text):
     salary_entry = ttk.Entry(dialoguebox, textvariable=salary)
     salary_entry.pack(fill="x", expand=True)
     salary_entry.focus()
+    
+    #Salary
+    monthly_spending_label = ttk.Label(dialoguebox, text = "What is your estimated monthly spending on groceries, spare time activities/equipment etc.?")
+    monthly_spending_label.pack(fill="x",expand=True)
+
+    monthly_spending_label = ttk.Entry(dialoguebox, textvariable=monthly_spending)
+    monthly_spending_label.pack(fill="x", expand=True)
+    monthly_spending_label.focus()
 
     #OK button
     ok_button = ttk.Button(dialoguebox, text="Simulate my loan", command=ok_clicked)
@@ -56,18 +65,19 @@ def get_user_input(info_text):
 
     root.mainloop()
     
-    if housePrice.get() == "" and equity.get() == "" and salary.get() == "":
+    if house_price.get() == "" and equity.get() == "" and salary.get() == "" and monthly_spending.get() == "":
         exit_workflow()
 
     try:
-        int(housePrice.get())
+        int(house_price.get())
         int(equity.get())
         int(salary.get())
+        int(monthly_spending.get())
     except ValueError:
         return False
 
     with open("userinput.txt", "w", encoding="utf-8") as f:
-        f.write(f"{housePrice.get()} {equity.get()} {salary.get()}")
+        f.write(f"{house_price.get()} {equity.get()} {salary.get()} {monthly_spending.get()}")
     return True
 
 def exit_workflow():
