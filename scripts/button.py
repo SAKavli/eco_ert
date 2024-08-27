@@ -14,7 +14,7 @@ def get_user_input(info_text):
     house_price = tk.StringVar()
     equity = tk.StringVar()
     salary = tk.StringVar()
-    monthly_spending = tk.StringVar()
+    monthly_expenses = tk.StringVar()
 
     def ok_clicked():
         root.destroy()
@@ -52,12 +52,12 @@ def get_user_input(info_text):
     salary_entry.focus()
     
     #Salary
-    monthly_spending_label = ttk.Label(dialoguebox, text = "What is your estimated monthly spending on groceries, spare time activities/equipment etc.?")
-    monthly_spending_label.pack(fill="x",expand=True)
+    monthly_expenses_label = ttk.Label(dialoguebox, text = "What is your estimated monthly spending on groceries, spare time activities/equipment etc.?")
+    monthly_expenses_label.pack(fill="x",expand=True)
 
-    monthly_spending_label = ttk.Entry(dialoguebox, textvariable=monthly_spending)
-    monthly_spending_label.pack(fill="x", expand=True)
-    monthly_spending_label.focus()
+    monthly_expenses_label = ttk.Entry(dialoguebox, textvariable=monthly_expenses)
+    monthly_expenses_label.pack(fill="x", expand=True)
+    monthly_expenses_label.focus()
 
     #OK button
     ok_button = ttk.Button(dialoguebox, text="Simulate my loan", command=ok_clicked)
@@ -65,19 +65,19 @@ def get_user_input(info_text):
 
     root.mainloop()
     
-    if house_price.get() == "" and equity.get() == "" and salary.get() == "" and monthly_spending.get() == "":
+    if house_price.get() == "" and equity.get() == "" and salary.get() == "" and monthly_expenses.get() == "":
         exit_workflow()
 
     try:
         int(house_price.get())
         int(equity.get())
         int(salary.get())
-        int(monthly_spending.get())
+        int(monthly_expenses.get())
     except ValueError:
         return False
 
     with open("userinput.txt", "w", encoding="utf-8") as f:
-        f.write(f"{house_price.get()} {equity.get()} {salary.get()} {monthly_spending.get()}")
+        f.write(f"{house_price.get()} {equity.get()} {salary.get()} {monthly_expenses.get()}")
     return True
 
 def exit_workflow():
