@@ -20,9 +20,12 @@ If the window was exited with blank fields, the ert experiment
 will fail.
 
 By pressing "show plotting", ert will visualize how large your loan
-will be, and when you will be rent free (curve hitting y = 0).
+will be, and at what month you will be rent free (curve hitting y = 0).
 
 There is by default 50 realizations of the simulated loan, which vary the parameters taxrate (25-35%, Triangular distribution) and interest (2-9%, Triangular distribution).
+
+Each realization will keep iterating until the loan hits 0, unless there has been 100 iterations, and the
+loan is increasing for each month (meaning interest + monthly expenses > monthly repayment) 
 
 If you want to run more experiments after the first, the storage and userinput.txt folder and file should be removed:
 
