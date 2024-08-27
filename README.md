@@ -12,12 +12,18 @@ first enable the komodo environment by typing..
 
 Then, run ensemble experiment in the ert GUI.
 A window taking user input will appear, which will ask
-for information about price of desired house, equity and salary.
+for information about price of desired house, equity, salary and estimated monthly expenses.
 
 Hit "Simulate my loan". If invalid input was entered
 a new window will appear requesting the information again.
+If the window was exited with blank fields, the ert experiment
+will fail.
 
 By pressing "show plotting", ert will visualize how large your loan
 will be, and when you will be rent free (curve hitting y = 0).
 
 There is by default 50 realizations of the simulated loan, which vary the parameters taxrate (25-35%, Triangular distribution) and interest (2-9%, Triangular distribution).
+
+If you want to run more experiments after the first, the storage and userinput.txt folder and file should be removed:
+
+> rm -r storage userinput.txt
