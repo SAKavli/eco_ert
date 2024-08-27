@@ -17,5 +17,3 @@ FORWARD_MODEL COPY_FILE(<FROM>=<CONFIG_PATH>/userinput.txt, <TO>=userinput.txt)
 INSTALL_JOB eco_eval ECO_EVAL
 
 FORWARD_MODEL eco_eval
-
-
