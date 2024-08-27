@@ -52,7 +52,7 @@ def get_user_input(info_text):
     salary_entry.focus()
     
     #Salary
-    monthly_expenses_label = ttk.Label(dialoguebox, text = "What is your estimated monthly spending on groceries, spare time activities/equipment etc.?")
+    monthly_expenses_label = ttk.Label(dialoguebox, text = "What is your estimated monthly expenses from groceries, spare time activities/equipment etc.?")
     monthly_expenses_label.pack(fill="x",expand=True)
 
     monthly_expenses_label = ttk.Entry(dialoguebox, textvariable=monthly_expenses)
