@@ -1,0 +1,2 @@
+interest_rate TRIANGULAR 2 6 9
+tax TRIANGULAR 25 30 35
