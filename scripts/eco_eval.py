@@ -2,8 +2,7 @@
 import json
 from time import sleep as sleep
 
-def evaluate(coeffs,debt,salary):
-    monthly_expenses = 5000
+def evaluate(coeffs,debt,salary,monthly_expenses):
     int_rate = coeffs["interest_rate"]
     tax = coeffs["tax"]
 
@@ -20,13 +19,13 @@ def main():
 
     #Read user input
     with open("userinput.txt", "r", encoding="utf-8") as f:
-        house_price, equity, salary = [int(x) for x in f.readline().split()]
+        house_price, equity, salary, monthly_expenses = [int(x) for x in f.readline().split()]
     #Initialize debt value
     debt =  house_price - equity
     i = 0
     output = [debt]
     while debt>0:
-        debt = evaluate(coeffs,debt,salary)
+        debt = evaluate(coeffs,debt,salary,monthly_expenses)
         output.append(debt)
         i += 1
         """
