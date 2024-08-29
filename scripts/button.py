@@ -101,6 +101,9 @@ def exit_workflow():
     root.mainloop()
     exit()
 
-input_is_valid = get_user_input("Hi! Please fill in your information to simulate when you will be debt free!\n(Enter empty boxes to exit)\n\n")
-while not input_is_valid:  #Keep asking for input until input is valid
-    input_is_valid = get_user_input("Sorry, you have entered something invalid, please enter only numbers\n(Enter empty boxes to exit)\n\n")
+def main():
+    input_is_valid = get_user_input("Hi! Please fill in your information to simulate when you will be debt free!\n(Enter empty boxes to exit)\n\n")
+    while not input_is_valid:  #Keep asking for input until input is valid
+        input_is_valid = get_user_input("Sorry, you have entered something invalid, please enter only numbers\n(Enter empty boxes to exit)\n\n")
+if __name__ == "__main__":
+    main()
