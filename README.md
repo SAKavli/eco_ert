@@ -1,5 +1,6 @@
 # eco_ert
-Simple example of ert usage for simulation of a house loan.
+Simple example of ert usage for a sensitivity simulation of a house loan.
+The simulation will simply plot many realizations of how the house loan will be downpayed depending on varying tax- and interest rates, measured in number of months.
 
 As instructed in the ert polyexample documentation,
 first enable the komodo environment by typing..
