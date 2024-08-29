@@ -1,3 +1,3 @@
 INTERNAL False
 
-EXECUTABLE ../scripts/user_interaction/button.py
+EXECUTABLE ../scripts/user_interaction/house_input.py
