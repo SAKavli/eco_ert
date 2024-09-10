@@ -32,3 +32,5 @@ loan is increasing for each month (meaning interest + monthly expenses > monthly
 If you want to run more experiments after the first, the storage and userinput.txt folder and file should be removed:
 
 > rm -r storage userinput.txt
+
+
